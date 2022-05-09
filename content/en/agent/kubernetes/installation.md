@@ -54,8 +54,6 @@ Using the Datadog Operator requires the following prerequisites:
 
 ## Deploy an Agent with the Operator
 
-To deploy the Datadog Agent with the operator in the minimum number of steps, see the [`datadog-operator`][4] Helm chart. Here are the steps:
-
 1. Install the [Datadog Operator][5]:
 
    ```shell
@@ -92,6 +90,8 @@ To deploy the Datadog Agent with the operator in the minimum number of steps, se
        image:
          name: "gcr.io/datadoghq/cluster-agent:latest"
    ```
+   
+   For more configuration options, see the [`datadog-operator`][4] Helm chart.
 
 3. Deploy the Datadog Agent with the above configuration file:
    ```shell
