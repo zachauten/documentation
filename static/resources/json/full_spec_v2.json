@@ -76773,7 +76773,7 @@
     },
     "/api/v2/security/cloud_workload/policy/download": {
       "get": {
-        "description": "The download endpoint generates a Cloud Workload Security policy file from your currently active\nCloud Workload Security rules, and downloads them as a .policy file. This file can then be deployed to\nyour agents to update the policy running in your environment.",
+        "description": "The download endpoint generates a Cloud Workload Security policy file from your currently active\nCloud Workload Security rules, and downloads them as a .policy file. This file can then be deployed to\nyour Agents to update the policy running in your environment.",
         "operationId": "DownloadCloudWorkloadPolicyFile",
         "responses": {
           "200": {
