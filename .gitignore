@@ -127,6 +127,21 @@ content/en/serverless/libraries_integrations/cli.md
 content/en/serverless/libraries_integrations/cdk.md
 content/en/serverless/libraries_integrations/extension.md
 
+# cloud resources schema
+content/en/security_platform/cspm/custom_rules/gcp_sql_database_instance.md
+content/en/security_platform/cspm/custom_rules/gcp_compute_instance.md
+content/en/security_platform/cspm/custom_rules/gcp_iam_policy.md
+content/en/security_platform/cspm/custom_rules/gcp_compute_firewall.md
+content/en/security_platform/cspm/custom_rules/gcp_dns_managed_zone.md
+content/en/security_platform/cspm/custom_rules/gcp_iam_service_account.md
+content/en/security_platform/cspm/custom_rules/gcp_compute_network.md
+content/en/security_platform/cspm/custom_rules/gcp_project.md
+content/en/security_platform/cspm/custom_rules/gcp_bigquery_table.md
+content/en/security_platform/cspm/custom_rules/gcp_storage_bucket.md
+content/en/security_platform/cspm/custom_rules/gcp_dataproc_cluster.md
+content/en/security_platform/cspm/custom_rules/gcp_iam_service_account_key.md
+content/en/security_platform/cspm/custom_rules/gcp_kms_crypto_key.md
+
 # Runtime data
 pids
 *.pid
