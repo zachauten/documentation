@@ -2492,16 +2492,21 @@ main:
     parent: cspm
     identifier: ootb_infrastructure_rules
     weight: 4
+  - name: Cloud Resources Schema
+    url: security_platform/cspm/custom_rules/schema/
+    parent: cspm
+    identifier: cspm_schema_gcp_test
+    weight: 5
   - name: Posture Findings
     url: /security_platform/cspm/findings
     parent: cspm
     identifier: cspm_findings_explorer
-    weight: 4
+    weight: 6
   - name: Signals Explorer
     url: /security_platform/cspm/signals_explorer/
     parent: cspm
     identifier: signals
-    weight: 5
+    weight: 7
   - name: Cloud Workload Security
     url: security_platform/cloud_workload_security/
     parent: security_platform_heading
