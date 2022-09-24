@@ -12,7 +12,9 @@
 - [gcp_storage_bucket][10]
 - [gcp_dataproc_cluster][11]
 - [gcp_iam_service_account_key][12]
-- [gcp_kms_crypto_key][13][1]: /security_platform/cspm/custom_rules/gcp_sql_database_instance/
+- [gcp_kms_crypto_key][13]
+
+[1]: /security_platform/cspm/custom_rules/gcp_sql_database_instance/
 [2]: /security_platform/cspm/custom_rules/gcp_compute_instance/
 [3]: /security_platform/cspm/custom_rules/gcp_iam_policy/
 [4]: /security_platform/cspm/custom_rules/gcp_compute_firewall/
