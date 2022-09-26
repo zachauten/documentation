@@ -1132,7 +1132,7 @@
     contents:
 
     - action: pull-and-push-folder
-      branch: prod
+      branch: kari/cloud-resource-schema
       globs:
         - 'generated/md/gcp_sql_database_instance.md'
         - 'generated/md/gcp_compute_instance.md'
