@@ -125,9 +125,18 @@ def remove_reference(section, regex_skip_sections_start,
                 skip = False
         elif not skip:
 
-            if re.search(regex_skip_sections_start, line):
-                section_without_references.append(line)
-                skip = True
+            matches = re.search(regex_skip_sections_start, line)
+            if matches:
+                # check if the closing is on the same line
+                string_before_match = matches.string[0:matches.start(0)]
+                string_after_match = matches.string[matches.end(0):]
+                if re.search(regex_skip_sections_end, string_after_match):
+                    # start and end on same line! unlikely to be foot link so continue
+                    section_without_references.append(line)
+                else:
+                    # not all on same line
+                    section_without_references.append(line)
+                    skip = True
 
             elif re.search(regex_bottom_reference_link, line):
 
@@ -170,9 +179,19 @@ def inlining_all_links(
             if re.search(regex_skip_sections_end, line):
                 skip = False
         elif not skip:
-            if re.search(regex_skip_sections_start, line):
-                skip = True
-            else:
+
+            matches = re.search(regex_skip_sections_start, line)
+            if matches:
+                # check if the closing is on the same line
+                string_before_match = matches.string[0:matches.start(0)]
+                string_after_match = matches.string[matches.end(0):]
+                if re.search(regex_skip_sections_end, string_after_match):
+                    # start and end on same line!
+                    pass
+                else:
+                    skip = True
+
+            if not skip:
                 for reference in all_references:
                     reference_index, reference_val = reference
 
@@ -209,9 +228,19 @@ def collect_all_links(section_with_all_links,
             if re.search(regex_skip_sections_end, line):
                 skip = False
         elif not skip:
-            if re.search(regex_skip_sections_start, line):
-                skip = True
-            else:
+
+            matches = re.search(regex_skip_sections_start, line)
+            if matches:
+                # check if the closing is on the same line
+                string_before_match = matches.string[0:matches.start(0)]
+                string_after_match = matches.string[matches.end(0):]
+                if re.search(regex_skip_sections_end, string_after_match):
+                    # start and end on same line!
+                    pass
+                else:
+                    skip = True
+
+            if not skip:
                 line_links = re.findall(regex_link_inlined, line,
                                         re.MULTILINE)
                 if not line_links == []:
@@ -254,9 +283,18 @@ def transform_link_to_references(
             if re.search(regex_skip_sections_end, line):
                 skip = False
         elif not skip:
-            if re.search(regex_skip_sections_start, line):
-                skip = True
-            else:
+            matches = re.search(regex_skip_sections_start, line)
+            if matches:
+                # check if the closing is on the same line
+                string_before_match = matches.string[0:matches.start(0)]
+                string_after_match = matches.string[matches.end(0):]
+                if re.search(regex_skip_sections_end, string_after_match):
+                    # start and end on same line!
+                    pass
+                else:
+                    skip = True
+
+            if not skip:
                 for i, link in enumerate(all_links):
                     link_to_reference = '](' + str(link) + ')'
                     # i is incremented by one in order to start references indexes at 1
