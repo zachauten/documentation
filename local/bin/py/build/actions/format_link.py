@@ -35,7 +35,11 @@ def prepare_file(file):
                     state = 'tabs'
                 # if we encounter site-region in main section not in tab
                 elif re.search(r"{{< site-region", line.strip()):
-                    state = 'region'
+                    if re.search(r"{{< /site-region >}}", line.strip()):
+                        # closing region is on same line pass for now
+                        pass
+                    else:
+                        state = 'region'
             elif state == 'tabs':
                 main_section.append(line)
                 if (re.search(r"{{% tab ", line.strip()) or re.search(r"{{< programming-lang ", line.strip())):
