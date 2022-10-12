@@ -33,12 +33,23 @@ def prepare_file(file):
                 main_section.append(line)
                 if (re.search(r"{{< tabs >}}", line.strip()) or re.search(r"{{< programming-lang-wrapper", line.strip())):
                     state = 'tabs'
+                # if we encounter site-region in main section not in tab
+                elif re.search(r"{{< site-region", line.strip()):
+                    state = 'region'
             elif state == 'tabs':
                 main_section.append(line)
                 if (re.search(r"{{% tab ", line.strip()) or re.search(r"{{< programming-lang ", line.strip())):
                     state = 'tab'
                 if (re.search(r"{{< /tabs >}}", line.strip()) or re.search(r"{{< /programming-lang-wrapper >}}", line.strip())):
                     state = 'main'
+            elif state == 'region':
+                if re.search(r"{{< /site-region >}}", line.strip()):
+                    state = 'main'
+                    main_section.append(line)
+                    sub_sections.append(temp_section)
+                    temp_section = []
+                else:
+                    temp_section.append(line)
             elif state == 'tab':
                 if (re.search(r"{{% /tab %}}", line.strip()) or re.search(r"{{< /programming-lang >}}", line.strip())):
                     state = 'tabs'
@@ -274,7 +285,8 @@ def process_section(section, regex_skip_sections_start,
     try:
         all_references, section_without_references = remove_reference(
             section, regex_skip_sections_start, regex_skip_sections_end)
-    except AssertionError:
+    except AssertionError as e:
+        print(e)
         print('\x1b[31mERROR\x1b[0m: Some references are duplicated.')
         raise AssertionError
     except ValueError:
@@ -326,12 +338,13 @@ def inline_section(file_prepared):
 
     end_section_pattern = r"\s*{{% /tab %}}.*"
     end_lang_section_pattern = r"\s*{{< /programming-lang >}}.*"
+    end_region_section_pattern = r"\s*{{< /site-region >}}.*"
 
     i = 1
 
     try:
         for line in file_prepared[0]:
-            if (re.match(end_section_pattern, line) or re.match(end_lang_section_pattern, line)):
+            if (re.match(end_section_pattern, line) or re.match(end_lang_section_pattern, line) or re.match(end_region_section_pattern, line)):
                 final_text += file_prepared[i]
                 i += 1
             final_text.append(line)
@@ -365,7 +378,8 @@ def format_link_file(file, regex_skip_sections_start,
             final_text.append(process_section(section,
                                               regex_skip_sections_start,
                                               regex_skip_sections_end))
-        except:
+        except Exception as e:
+            print(e)
             print(
                 '\x1b[31mERROR\x1b[0m: There was an issue processing a section for file: {}'.format(file))
             raise ValueError
@@ -399,7 +413,8 @@ if __name__ == '__main__':
                                           regex_skip_sections_start, regex_skip_sections_end)
             with open(options.file, 'w') as final_file:
                 final_file.write(final_text)
-        except:
+        except Exception as e:
+            print(e)
             print('\x1b[31mERROR\x1b[0m: Processing file {}'.format(
                 options.file))
 
