@@ -4217,6 +4217,7 @@ components:
       - rum_issue_stream
       - apm_issue_stream
       - logs_pattern_stream
+      - rum_stream
       example: apm_issue_stream
       type: string
       x-enum-varnames:
@@ -4225,6 +4226,7 @@ components:
       - RUM_ISSUE_STREAM
       - APM_ISSUE_STREAM
       - LOGS_PATTERN_STREAM
+      - RUM_STREAM
     ListStreamWidgetDefinition:
       description: 'The list stream visualization displays a table of recent events
         in your application that
