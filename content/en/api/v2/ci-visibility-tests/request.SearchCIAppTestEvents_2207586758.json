@@ -1,0 +1,11 @@
+{
+  "filter": {
+    "from": "2022-09-20T12:50:46+00",
+    "query": "@test.status:pass AND -@language:python",
+    "to": "2022-10-01T06:30:12+00"
+  },
+  "page": {
+    "limit": 2
+  },
+  "sort": "timestamp"
+}

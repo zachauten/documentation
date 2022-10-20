@@ -58,6 +58,78 @@
       "description": "List all AuthN Mappings returns \"OK\" response"
     }
   ],
+  "AggregateCIAppPipelineEvents": [
+    {
+      "group": "ci_visibility_pipelines",
+      "suffix": "_3044480615",
+      "description": "Aggregate CI Visibility pipeline events returns \"OK\" response"
+    }
+  ],
+  "ListCIAppPipelineEvents": [
+    {
+      "group": "ci_visibility_pipelines",
+      "suffix": "_4065138514",
+      "description": "Get a list of CI Visibility pipeline events returns \"OK\" response"
+    },
+    {
+      "group": "ci_visibility_pipelines",
+      "suffix": "_2568363384",
+      "description": "Get a list of CI Visibility pipeline events returns \"OK\" response with pagination"
+    },
+    {
+      "group": "ci_visibility_pipelines",
+      "suffix": "_2309560719",
+      "description": "Get a quick list of CI Visibility pipeline events returns \"OK\" response"
+    }
+  ],
+  "SearchCIAppPipelineEvents": [
+    {
+      "group": "ci_visibility_pipelines",
+      "suffix": "_1852839222",
+      "description": "Search CI Visibility pipeline events returns \"OK\" response"
+    },
+    {
+      "group": "ci_visibility_pipelines",
+      "suffix": "_4083817308",
+      "description": "Search CI Visibility pipeline events returns \"OK\" response with pagination"
+    }
+  ],
+  "AggregateCIAppTestEvents": [
+    {
+      "group": "ci_visibility_tests",
+      "suffix": "_1514018001",
+      "description": "Aggregate CI Visibility test events returns \"OK\" response"
+    }
+  ],
+  "ListCIAppTestEvents": [
+    {
+      "group": "ci_visibility_tests",
+      "suffix": "_2473072060",
+      "description": "Get a list of CI Visibility test events returns \"OK\" response"
+    },
+    {
+      "group": "ci_visibility_tests",
+      "suffix": "_550575074",
+      "description": "Get a list of CI Visibility test events returns \"OK\" response with pagination"
+    },
+    {
+      "group": "ci_visibility_tests",
+      "suffix": "_567285753",
+      "description": "Get a quick list of CI Visibility test events returns \"OK\" response"
+    }
+  ],
+  "SearchCIAppTestEvents": [
+    {
+      "group": "ci_visibility_tests",
+      "suffix": "_402330528",
+      "description": "Search CI Visibility test events returns \"OK\" response"
+    },
+    {
+      "group": "ci_visibility_tests",
+      "suffix": "_2207586758",
+      "description": "Search CI Visibility test events returns \"OK\" response with pagination"
+    }
+  ],
   "CreateCloudWorkloadSecurityAgentRule": [
     {
       "group": "cloud_workload_security",

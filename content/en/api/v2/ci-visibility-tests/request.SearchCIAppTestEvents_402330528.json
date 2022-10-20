@@ -1,0 +1,14 @@
+{
+  "filter": {
+    "from": "2022-10-09T12:00:00.100+01:00",
+    "query": "@test.service:web-ui-tests AND @test.status:fail",
+    "to": "2022-10-11T08:02:13.010+01:00"
+  },
+  "options": {
+    "timezone": "GMT"
+  },
+  "page": {
+    "limit": 25
+  },
+  "sort": "timestamp"
+}

@@ -7365,6 +7365,86 @@ api:
         - ListAuthNMappings
       unstable: []
       order: 4
+  - name: CI Visibility Pipelines
+    url: /api/latest/ci-visibility-pipelines/
+    identifier: ci-visibility-pipelines
+    generated: true
+  - name: Search pipelines
+    url: '#search-pipelines'
+    identifier: ci-visibility-pipelines-search-pipelines
+    parent: ci-visibility-pipelines
+    generated: true
+    params:
+      versions:
+        - v2
+      operationids:
+        - SearchCIAppPipelineEvents
+      unstable: []
+      order: 2
+  - name: Get a list of pipelines
+    url: '#get-a-list-of-pipelines'
+    identifier: ci-visibility-pipelines-get-a-list-of-pipelines
+    parent: ci-visibility-pipelines
+    generated: true
+    params:
+      versions:
+        - v2
+      operationids:
+        - ListCIAppPipelineEvents
+      unstable: []
+      order: 1
+  - name: Aggregate pipelines
+    url: '#aggregate-pipelines'
+    identifier: ci-visibility-pipelines-aggregate-pipelines
+    parent: ci-visibility-pipelines
+    generated: true
+    params:
+      versions:
+        - v2
+      operationids:
+        - AggregateCIAppPipelineEvents
+      unstable: []
+      order: 3
+  - name: CI Visibility Tests
+    url: /api/latest/ci-visibility-tests/
+    identifier: ci-visibility-tests
+    generated: true
+  - name: Search tests
+    url: '#search-tests'
+    identifier: ci-visibility-tests-search-tests
+    parent: ci-visibility-tests
+    generated: true
+    params:
+      versions:
+        - v2
+      operationids:
+        - SearchCIAppTestEvents
+      unstable: []
+      order: 2
+  - name: Get a list of tests
+    url: '#get-a-list-of-tests'
+    identifier: ci-visibility-tests-get-a-list-of-tests
+    parent: ci-visibility-tests
+    generated: true
+    params:
+      versions:
+        - v2
+      operationids:
+        - ListCIAppTestEvents
+      unstable: []
+      order: 1
+  - name: Aggregate tests
+    url: '#aggregate-tests'
+    identifier: ci-visibility-tests-aggregate-tests
+    parent: ci-visibility-tests
+    generated: true
+    params:
+      versions:
+        - v2
+      operationids:
+        - AggregateCIAppTestEvents
+      unstable: []
+      order: 3
   - name: Cloud Workload Security
     url: /api/latest/cloud-workload-security/
     identifier: cloud-workload-security
